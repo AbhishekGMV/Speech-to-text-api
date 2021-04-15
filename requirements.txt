@@ -34,6 +34,7 @@ requests==2.25.1
 rope==0.17.0
 rsa==4.6
 six==1.15.0
+SpeechRecognition==3.8.1
 toml==0.10.1
 typing-extensions==3.7.4.3
 typing-inspect==0.6.0
