@@ -3,11 +3,12 @@ import speech_recognition as sr
 from os import path
 app = Flask(__name__)
 
-@app.route('/', methods=['GET','POST'])
-def convertAudioFiletoText():
-    if request.method == 'GET':
-        return "<h3>Make a post request with an audio file for transcription</h3>"
+@app.route('/')
+def index(methods=['GET']):
+    return "<h3>Make a post request with an audio file for transcription</h3>"
 
+@app.route('/transcribeAudio', methods=['POST'])
+def convertAudioFiletoText():
     AUDIO_FILE = request.files['audio']
     recognizer = sr.Recognizer()
     with sr.AudioFile(AUDIO_FILE) as source:
