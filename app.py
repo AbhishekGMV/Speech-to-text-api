@@ -18,4 +18,7 @@ def convertAudioFiletoText():
         response = recognizer.recognize_google(audio, language='en-IN')
         json_response = jsonify({"responseText": response})
     return json_response
-app.run()    
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
