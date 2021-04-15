@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    print(sr.__version__)
     return "<h3>Make a post request with an audio file for transcription</h3>"
 
 @app.route('/transcribeAudio', methods=['POST'])
