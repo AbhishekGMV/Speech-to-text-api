@@ -15,10 +15,13 @@ def convertAudioFiletoText():
     with sr.AudioFile(AUDIO_FILE) as source:
         recognizer.adjust_for_ambient_noise(source)
         audio = recognizer.record(source)
-        response = recognizer.recognize_google(audio, language='en-IN')
+        response = recognizer.recognize_google(audio, language='en-US')
         json_response = jsonify({"responseText": response})
     return json_response
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
